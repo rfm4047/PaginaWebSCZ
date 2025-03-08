@@ -1,0 +1,103 @@
+& when not (@fullScreen) {
+  padding-top: (@paddingTop * 1rem);
+  padding-bottom: (@paddingBottom * 1rem);
+}
+& when (@bg-type = 'color') {
+  background-color: @bg-value;
+}
+& when (@bg-type = 'image') {
+  background-image: url(@bg-value);
+}
+.mbr-fallback-image.disabled {
+  display: none;
+}
+.mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  & when (@bg-type = 'video') {
+    background-image: url(@fallBackImage);
+  }
+}
+& when (@fullWidth) {
+  .container-fluid {
+    padding: 0 20px;
+    @media (max-width: 992px) {
+      padding: 0 6px;
+    }
+  }
+}
+.container {
+  @media (max-width: 992px) {
+    padding: 0 6px;
+  }
+}
+.row {
+  margin: 0;
+  padding: 150px;
+  @media (max-width: 1440px) {
+    padding: 150px 32px;
+  }
+  @media (max-width: 1200px) {
+    padding: 150px 8px;
+  }
+  @media (max-width: 992px) {
+    padding: 70px 60px;
+  }
+  @media (max-width: 768px) {
+    padding: 70px 30px;
+  }
+  .card {
+    padding: 0;
+    border-radius: 0 !important;
+    overflow: visible;
+    justify-content: center;
+  }
+}
+.image-wrapper {
+  padding-right: 200px;
+  & when (@reverseContent) {
+    padding-right: 0;
+    padding-left: 200px;
+    @media (max-width: 992px) {
+      padding: 0;
+    }
+  }
+  @media (max-width: 992px) {
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  img {
+    width: 300px;
+    height: 156px;
+    object-fit: cover;
+    @media (max-width: 992px) {
+      width: 250px;
+      margin: 0 auto;
+    }
+  }
+}
+.title-wrapper {
+  .mbr-section-title {
+    margin-bottom: 0;
+    span {
+      color: @title;
+    }
+  }
+  .mbr-text {
+    margin: 50px 0 0;
+  }
+  .mbr-section-btn {
+    margin-top: 30px;
+  }
+}
+.mbr-section-title {
+  color: #131313;
+}
+.mbr-text {
+  color: #131313;
+}
